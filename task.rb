@@ -5,7 +5,8 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-
+	names << "斎藤"
+	p names
 end
 
 def q2
@@ -13,20 +14,32 @@ def q2
   array2 = ["bird", "bat", "tiger"]
 
   # 以下に回答を記載
-
+	array = []
+	array1.each do |a|
+		array << a
+	end
+	array2.each do |a|
+		array << a
+	end
+	p array
 end
 
 def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
   # 以下に回答を記載
-
+	no3 = []
+	numbers.each do |num|
+		no3 << num if num == 3
+	end
+	puts no3.size
 end
 
 def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
+  sports.delete(nil)
 
   # 以下は変更しないで下さい
   p sports
@@ -37,21 +50,23 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
-
+  puts array1.empty? ? "true" : "false"
+  puts array2.empty? ? "true" : "false"
 end
 
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-
+	numbers2 = numbers1.map {|num| num * 10}
+	p numbers2
 end
 
 def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-
+	array.map!{|n| n.to_i}
   # 以下は変更しないで下さい
   p array
 end
@@ -60,6 +75,8 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
+  programming_languages.map!{|language| language.capitalize}
+  upper_case_programming_languages = programming_languages.map{|language| language.upcase}
 
   # 以下は変更しないで下さい
   p programming_languages
